@@ -1,0 +1,9 @@
+<%= form_for @dish do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :dish_type %>:
+  <%= f.select :dish_type, ['main', 'vegetarian', 'side', 'dessert']%>
+
+  <%= f.submit %>
+<% end %>
