@@ -10,6 +10,7 @@ class MealsController < ApplicationController
 
   def new
     @meal = Meal.new
+    @dishes = Dish.all
   end
 
   def create
@@ -23,6 +24,8 @@ class MealsController < ApplicationController
 
   def edit
     @meal = Meal.find(params[:id])
+    @dishes = Dish.all
+
   end
 
   def update
@@ -42,7 +45,7 @@ class MealsController < ApplicationController
   private
 
   def meal_params
-    params.require(:meal).permit(:name, :date, :location)
+    params.require(:meal).permit(:name, :date, :location)#, {:dish_ids => []})
   end
 
 end

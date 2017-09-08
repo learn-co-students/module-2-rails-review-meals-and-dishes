@@ -8,5 +8,12 @@
   <%= f.label :location %>:
   <%= f.text_field :location %><br />
 
+  <% if @dishes %>
+    <%= f.label :dishes %>
+    <%= f.collection_check_boxes(:dish_ids, @dishes, :id, :name) do |d| %>
+      <%= d.check_box %> <%= d.text %>
+    <% end %>
+  <% end %>
+
   <%= f.submit %>
 <% end %>
